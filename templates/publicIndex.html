@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block content %}
+<div class="position-relative hero-bg">
+      <div>
+        <svg viewBox="0 0 1000 600">
+		  <symbol id="s-text">
+		    <text text-anchor="middle"
+		          x="50%"
+		          y="35%"
+		          class="text--line"
+		          >
+		      Workout
+		    </text>
+		    <text text-anchor="middle"
+		          x="50%"
+		          y="68%"
+		          class="text--line2"
+		          >
+		      Catalog
+		    </text>
+		    
+		  </symbol>
+		  
+		  <g class="g-ants">
+		    <use xlink:href="#s-text"
+		      class="text-copy"></use>     
+		    <use xlink:href="#s-text"
+		      class="text-copy"></use>     
+		    <use xlink:href="#s-text"
+		      class="text-copy"></use>     
+		    <use xlink:href="#s-text"
+		      class="text-copy"></use>     
+		    <use xlink:href="#s-text"
+		      class="text-copy"></use>     
+		  </g>
+		  
+		  
+		</svg>
+        <p class="lead font-weight-normal">Get up and get moving developers! Pick a workout and take a break from the coding!!</p>
+      </div>
+    </div>
+<div class="row categories">
+			<h3 class="list-header-main">
+					<span>Categories</span>
+					<span class="bar-space-main"></span>
+				</h3>
+			<ul class="list-text-main">
+				{% for category in categories %}
+				<a href="{{url_for('showCategory', cat_id = category.id)}}">
+					<li class="title-chars">
+						<span class="name-char">{{category.name}}</span>
+					</li>
+				</a>
+				{% endfor %}
+			</ul>
+		</div>
+
+<div class="row workouts">
+			<h3 class="list-header-main">
+					<span>Recently Added</span>
+					<span class="bar-space-main"></span>
+				</h3>
+			<ul class="list-text-main">
+				{% for workout in workouts %}
+				<a href="{{url_for('showWorkout', cat_id = workout.category_id ,wod_id = workout.id )}}">
+					<li>
+						<span class="name-char">{{workout.name}}</span>
+					</li>
+				</a>
+				{% endfor %}
+			</ul>
+</div>
+
+{% endblock %}

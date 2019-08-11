@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+<!-- prevent editor auto formatting from messing up the code -->
+
+{% block content %}
+
+
+
+<!---->
+<form class="category removal" method="POST">
+
+<h5 class="page-header"><span>Delete item<br/> ({{workout.name}})</span></h5>
+  <p>Woah there, Cowboy! Are you sure you want to delete this?</p>
+
+  <br>
+  <div class="changes">
+  <button class="mdl-button delete mdl-js-button mdl-button--raised mdl-button--accent">Yes, do it</button>
+  
+  <a class="edit" href="{{url_for('home')}}" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">NO! I don't!</a>
+</div>
+</form>
+
+<!---->
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row">
+	<div class="category">
+		<h5 class="page-header">
+				<span>{{workout.name}}</span>
+				<span class="bar-space"></span>
+			</h5>
+		<div>
+			{{workout.description}}
+		</div>
+		{% if 'username' in session %}
+		<div class="changes">
+			<a class="edit" href="{{url_for('editWorkout', cat_id = workout.category_id ,wod_id = workout.id )}}">Edit Workout</a>
+			<a class="delete" href="{{url_for('deleteWorkout', cat_id = workout.category_id ,wod_id = workout.id )}}">Delete Workout</a>
+		</div>
+		{% endif %} 
+	</div>
+</div>
+
+{% endblock %}

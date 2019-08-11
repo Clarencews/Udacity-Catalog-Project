@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row">
+	<div class="category">
+		<h5 class="page-header">
+				<span>{{workout.name}}</span>
+				<span class="bar-space"></span>
+			</h5>
+		<div>
+			{{workout.description}}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
